@@ -177,6 +177,16 @@ resource "aws_route" "private_rt_nat_a_r" {
 # S3 VPCEndopoint
 #-----------------------------------------------------------------
 
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id            = aws_vpc.vpc.id
+  service_name      = "com.amazonaws.us-east-1.s3"
+  vpc_endpoint_type = "Gateway"
+
+  tags = {
+    "Name" = "${var.project}-${var.environment}-s3-ep"
+  }
+}
+
 resource "aws_vpc_endpoint_route_table_association" "private_s3" {
   vpc_endpoint_id = aws_vpc_endpoint.s3.id
   route_table_id  = aws_route_table.private_rt.id
