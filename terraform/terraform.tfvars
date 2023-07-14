@@ -1,0 +1,6 @@
+project                   = "xxxxxxxxx"
+environment               = "dev"
+account                   = "xxxxxxxxx"
+shot-batch-vcpu           = "2"
+shot-batch-image          = "xxxxxxxxxxx"
+scheduling-batch-interval = "rate(15 minutes)"
