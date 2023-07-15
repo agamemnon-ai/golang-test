@@ -50,15 +50,6 @@ resource "aws_batch_job_definition" "shot_batch_definition" {
       platformVersion = "LATEST"
     }
 
-    environment = [
-      {
-        ENV1 = ""
-      },
-      {
-        ENV2 = ""
-      }
-    ]
-
     resourceRequirements = [
       {
         type  = "VCPU"
